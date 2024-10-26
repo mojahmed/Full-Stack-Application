@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import Cookies from 'js-cookie';
-
+//'http://localhost:5000'
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:5000',
+  baseUrl:  import.meta.env.VITE_BASE_URL || 'https://full-stack-application-0nyg.onrender.com',
   credentials: 'include',
   prepareHeaders: (headers) => {
     const token = Cookies.get('accessToken');
