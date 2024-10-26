@@ -26,7 +26,7 @@ app.use(express.json())
 
 // route
 
-app.use("/", express.static(path.join(__dirname,"public")));
+app.use("/", express.static(path.join(__dirname,"front-end/dist")));
 
 app.use("/" , require("./routes/root.cjs"));
 app.use("/auth" , require("./routes/authRoutes.cjs")); 
@@ -42,7 +42,7 @@ app.use("/posts", require("./routes/postRoutes.cjs"));
 app.all("*" , (req, res)=>{
     res.status(404)
     if(req.accepts("html")){
-        res.sendFile(path.join(__dirname, "views", "404.html"))
+        res.sendFile(path.join(__dirname, "front-end/dist", "index.html"))
 
     }else if(req.accepts("json")){
         res.json({message: "404 Not Found"});
