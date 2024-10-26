@@ -1,4 +1,4 @@
-const allowedOrigins = ["http://localhost:3000","https://auth-app-4an3.onrender.com"];
+const allowedOrigins = ["http://localhost:3000"];
 
 module.exports = allowedOrigins;
 
